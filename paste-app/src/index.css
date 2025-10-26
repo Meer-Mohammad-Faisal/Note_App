@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)] font-sans min-h-screen;
+    @apply bg-(--background) text-(--foreground) font-sans min-h-screen;
   }
 }
 
@@ -33,7 +33,7 @@
   }
 
   .search-input {
-    @apply w-full px-4 py-3 bg-[var(--card)] rounded-lg border border-gray-700 
+    @apply w-full px-4 py-3 bg-(--card) rounded-lg border border-gray-700 
            focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
            text-white placeholder-gray-400;
   }
@@ -44,7 +44,7 @@
 
   /* Fixed Title Input - Text now visible */
   .title-input {
-    @apply w-full text-white bg-[var(--card)] border border-gray-700 
+    @apply w-full text-white bg-(--card) border border-gray-700 
            rounded-md p-3 focus:outline-none focus:ring-2 
            focus:ring-indigo-500 focus:border-transparent 
            placeholder-gray-400;
@@ -52,7 +52,7 @@
 
   /* Fixed Content Textarea - Text now visible */
   .content-textarea {
-    @apply w-full p-4 bg-[var(--card)] focus:outline-none 
+    @apply w-full p-4 bg-(--card) focus:outline-none 
            text-white placeholder-gray-400 resize-none 
            border-none focus:ring-0 min-h-[300px];
   }
@@ -60,7 +60,7 @@
   /* Editor container with proper text visibility */
   .editor-container {
     @apply w-full flex flex-col items-start relative rounded-lg 
-           bg-[var(--card)] border border-gray-700 backdrop-blur-sm;
+           bg-(--card) border border-gray-700 backdrop-blur-sm;
   }
 
   .editor-header {
@@ -98,7 +98,7 @@
   /* Balanced Note Cards */
   .note-card {
     @apply border border-gray-700 w-full p-6 rounded-lg mb-6 
-           bg-[var(--card)] shadow-lg transition-all duration-200 
+           bg-(--card) shadow-lg transition-all duration-200 
            hover:shadow-xl hover:border-gray-600;
   }
 
@@ -137,7 +137,7 @@
 
   /* Form elements with visible text */
   .form-input {
-    @apply w-full text-white bg-[var(--card)] border border-gray-700 
+    @apply w-full text-white bg-(--card) border border-gray-700 
            rounded-md p-3 focus:outline-none focus:ring-2 
            focus:ring-indigo-500 focus:border-transparent 
            placeholder-gray-400;
