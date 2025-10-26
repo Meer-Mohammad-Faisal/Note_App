@@ -82,7 +82,7 @@ const Paste = () => {
                           </button>
 
                           <button className="action-button group hover:border-orange-400">
-                            <a href={`/pastes/${paste?._id}`} target="_blank">
+                            <a href={`#/pastes/${paste?._id}`}>
                               <Eye
                                 className="text-orange-300 group-hover:text-orange-100"
                                 size={20}
