@@ -1,8 +1,4 @@
-@reference "tailwindcss";
-
-/* @tailwind base;
-@tailwind components; */
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Define layers properly */
 @layer base {
@@ -13,9 +9,9 @@
     --muted: #94a3b8;
   }
 
-  /* body {
+  body {
     @apply bg-[var(--background)] text-[var(--foreground)] font-sans min-h-screen;
-  } */
+  }
 }
 
 @layer components {
@@ -29,5 +25,204 @@
 
   .btn-primary {
     @apply bg-indigo-600 hover:bg-indigo-700 text-white;
+  }
+
+  /* Perfect Search Bar */
+  .search-container {
+    @apply w-full relative mb-8;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3 bg-[var(--card)] rounded-lg border border-gray-700 
+           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+           text-white placeholder-gray-400;
+  }
+
+  .search-icon {
+    @apply absolute right-3 top-3 text-gray-400;
+  }
+
+  /* Fixed Title Input - Text now visible */
+  .title-input {
+    @apply w-full text-white bg-[var(--card)] border border-gray-700 
+           rounded-md p-3 focus:outline-none focus:ring-2 
+           focus:ring-indigo-500 focus:border-transparent 
+           placeholder-gray-400;
+  }
+
+  /* Fixed Content Textarea - Text now visible */
+  .content-textarea {
+    @apply w-full p-4 bg-[var(--card)] focus:outline-none 
+           text-white placeholder-gray-400 resize-none 
+           border-none focus:ring-0 min-h-[300px];
+  }
+
+  /* Editor container with proper text visibility */
+  .editor-container {
+    @apply w-full flex flex-col items-start relative rounded-lg 
+           bg-[var(--card)] border border-gray-700 backdrop-blur-sm;
+  }
+
+  .editor-header {
+    @apply w-full rounded-t-lg flex items-center justify-between 
+           px-4 py-3 border-b border-gray-700 bg-gray-800;
+  }
+
+  .window-controls {
+    @apply w-full flex gap-2 items-center select-none;
+  }
+
+  .control-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  /* Button styles for home page */
+  .create-btn {
+    @apply text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 
+           focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 
+           transition-all duration-200;
+  }
+
+  .update-btn {
+    @apply text-white bg-green-600 hover:bg-green-700 focus:ring-4 
+           focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 
+           transition-all duration-200;
+  }
+
+  .reset-btn {
+    @apply text-white bg-gray-600 hover:bg-gray-700 focus:ring-4 
+           focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 
+           transition-all duration-200 flex items-center justify-center;
+  }
+
+  /* Balanced Note Cards */
+  .note-card {
+    @apply border border-gray-700 w-full p-6 rounded-lg mb-6 
+           bg-[var(--card)] shadow-lg transition-all duration-200 
+           hover:shadow-xl hover:border-gray-600;
+  }
+
+  .note-content {
+    @apply flex flex-col space-y-4;
+  }
+
+  .note-header {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between 
+           gap-4 mb-4;
+  }
+
+  .note-title {
+    @apply text-2xl font-semibold text-white mb-2;
+  }
+
+  .note-preview {
+    @apply text-sm font-normal text-gray-300 line-clamp-3 
+           leading-relaxed mb-4;
+  }
+
+  .note-actions {
+    @apply flex gap-2 flex-wrap sm:flex-nowrap justify-end;
+  }
+
+  .action-button {
+    @apply p-2 rounded-md bg-gray-800 border border-gray-700 
+           hover:bg-gray-700 transition-all duration-200 
+           flex items-center justify-center;
+  }
+
+  .note-date {
+    @apply flex items-center gap-2 text-gray-400 text-sm 
+           mt-4 sm:mt-0;
+  }
+
+  /* Form elements with visible text */
+  .form-input {
+    @apply w-full text-white bg-[var(--card)] border border-gray-700 
+           rounded-md p-3 focus:outline-none focus:ring-2 
+           focus:ring-indigo-500 focus:border-transparent 
+           placeholder-gray-400;
+  }
+
+  /* Button variants */
+  .btn-secondary {
+    @apply bg-gray-700 hover:bg-gray-600 text-white;
+  }
+
+  .btn-success {
+    @apply bg-green-600 hover:bg-green-700 text-white;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white;
+  }
+
+  /* Section headers */
+  .section-header {
+    @apply text-3xl font-bold mb-6 text-white border-b border-gray-700 
+           pb-4;
+  }
+
+  /* Empty state */
+  .empty-state {
+    @apply text-xl text-center w-full text-gray-400 py-8;
+  }
+
+  /* Navbar styles */
+  .nav-container {
+    @apply w-full h-[45px] flex justify-center items-center p-4 bg-blue-900 gap-x-5;
+  }
+
+  .nav-link {
+    @apply font-medium text-xl transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-blue-300 font-semibold;
+  }
+
+  .nav-link-inactive {
+    @apply text-white hover:text-blue-200;
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 640px) {
+    .note-card {
+      @apply p-4;
+    }
+    
+    .note-header {
+      @apply flex-col items-start;
+    }
+    
+    .note-actions {
+      @apply justify-start;
+    }
+
+    .nav-container {
+      @apply gap-x-3;
+    }
+
+    .nav-link {
+      @apply text-lg;
+    }
+  }
+}
+
+@layer utilities {
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Ensure text visibility in all input fields */
+  input, textarea {
+    @apply text-white;
+  }
+
+  /* Specific fix for disabled inputs */
+  input:disabled, textarea:disabled {
+    @apply text-gray-300 bg-gray-800 cursor-not-allowed;
   }
 }

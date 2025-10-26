@@ -59,18 +59,16 @@ const Home = () => {
     <div className="w-full h-full py-10 max-w-[1200px] mx-auto px-5 lg:px-0">
       <div className="flex flex-col gap-y-5 items-start">
         <div className="w-full flex flex-row gap-x-4 justify-between items-center">
+          {/* Title Input */}
           <input
             type="text"
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            // Dynamic width based on whether pasteId is present
-            className={`${
-              pasteId ? "w-[80%]" : "w-[85%]"
-            } text-black border border-input rounded-md p-2`}
+            className="title-input"
           />
           <button
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
+            className="text-white bg-blue-700 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-800 dark:hover:bg-blue-700"
             onClick={createPaste}
           >
             {pasteId ? "Update Paste" : "Create My Paste"}
@@ -118,17 +116,14 @@ const Home = () => {
             </div>
           </div>
 
-          {/* TextArea */}
-          <textarea
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder="Write Your Content Here...."
-            className="w-full p-3  focus-visible:ring-0"
-            style={{
-              caretColor: "#000",
-            }}
-            rows={20}
-          />
+          {/* Content Textarea */}
+<textarea
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+  placeholder="Write Your Content Here...."
+  className="content-textarea"
+  rows={20}
+/>
         </div>
       </div>
     </div>
