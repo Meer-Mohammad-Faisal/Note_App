@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToPastes,  updateToPastes } from "../redux/pasteSlice";
 import { useSearchParams } from "react-router-dom";
 
+
 const Home = () => {
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
